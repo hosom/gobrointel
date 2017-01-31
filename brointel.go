@@ -21,7 +21,7 @@ const (
     PUBKEY_HASH
 )
 
-var HEADERS []string = []string{"#fields indicator", "indicator_type", "meta.source", "meta.desc", "meta.url", "meta.do_notice"}
+var HEADERS []string = []string{"#fields", "indicator", "indicator_type", "meta.source", "meta.desc", "meta.url", "meta.do_notice"}
 
 func Headers() string {
     return strings.Join(HEADERS, "\t")

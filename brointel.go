@@ -21,6 +21,12 @@ const (
     PUBKEY_HASH
 )
 
+var HEADERS []string = []string{"#fields indicator", "indicator_type", "meta.source", "meta.desc", "meta.url"}
+
+func Headers() string {
+    return strings.Join(HEADERS, "\t")
+}
+
 // String is used to cast an IndicatorType to a bro IndicatorType
 // this should prevent invalid input into the Bro Intel framework
 func (i IndicatorType) String() string {

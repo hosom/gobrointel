@@ -21,7 +21,7 @@ const (
     PUBKEY_HASH
 )
 
-var HEADERS []string = []string{"#fields indicator", "indicator_type", "meta.source", "meta.desc", "meta.url"}
+var HEADERS []string = []string{"#fields indicator", "indicator_type", "meta.source", "meta.desc", "meta.url", "meta.do_notice"}
 
 func Headers() string {
     return strings.Join(HEADERS, "\t")
@@ -87,7 +87,7 @@ func (i Item) String() string {
         DoNotice = "T"
     }
 
-    fields := []string{i.Indicator, i.Type.String(), i.Meta.Source, i.Meta.Url, DoNotice}
+    fields := []string{i.Indicator, i.Type.String(), i.Meta.Source, i.Meta.Desc, i.Meta.Url, DoNotice}
     return strings.Join(fields, "\t")
 }
 

@@ -11,27 +11,27 @@ import (
 type IndicatorType int
 
 const (
-	// An IP Address
+	// Addr IP Address
     Addr IndicatorType = iota
-	// A subnet in CIDR notation
+	// Subnet in CIDR notation
 	Subnet
-	// A complete URL without the prefix
+	// URL without the prefix
     URL
 	// Software name
     Software
 	// Email address
     Email
-	// DNS domain name
+	// Domain name
     Domain
-	// A user name
+	// User name
     Username
-	// A non-hash type specific hash
+	// Filehash is a non-hash type specific hash
     FileHash
-	// A file name
+	// Filename is a filename from a protocol that supports defined file names
     FileName
-	// Certificate SHA-1 hash
+	// CertHash is a certificate's SHA-1 hash
     CertHash
-	// Public Key MD5 hash
+	// PubKeyHash is a public key MD5 hash
     PubKeyHash
 )
 
@@ -78,13 +78,13 @@ func (i IndicatorType) String() string {
 
 // MetaData contains enrichment data about an Item
 type MetaData struct {
-    // An arbirary string value representing the data source
+    // Source is an arbirary string value representing the data source
     Source              string
     // Freeform description of the data
     Desc                string
-    // A URL for more information about the data
+    // URL for more information about the data
     URL                 string
-    // Boolean value to allow the data itself to represent if the
+    // DoNotice is aBoolean value to allow the data itself to represent if the
     // indicator that this metadata is attached to is notice worthy 
     DoNotice            bool
 }
@@ -108,7 +108,7 @@ func (i Item) String() string {
         DoNotice = "T"
     }
 
-    fields := []string{i.Indicator, i.Type.String(), i.Meta.Source, i.Meta.Desc, i.Meta.Url, DoNotice}
+    fields := []string{i.Indicator, i.Type.String(), i.Meta.Source, i.Meta.Desc, i.Meta.URL, DoNotice}
     return strings.Join(fields, "\t")
 }
 

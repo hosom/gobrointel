@@ -41,7 +41,7 @@ var headerFields = []string{"#fields", "indicator", "indicator_type", "meta.sour
 
 // Headers returns a string containing Bro intelligence file headers
 func Headers() string {
-    return strings.Join(HeaderFields, "\t")
+    return strings.Join(headerFields, "\t")
 }
 
 // String is used to cast an IndicatorType to a bro IndicatorType
